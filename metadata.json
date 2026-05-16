@@ -1,0 +1,6 @@
+{
+  "name": "Image Converter",
+  "description": "Image Converter Application (JPG to PNG and PNG to JPG)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Converter | Next-Gen Image Converter</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- STICKY NAVBAR -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="8" width="20" height="20" rx="4" stroke="url(#paint0_linear)" stroke-width="3"/>
+                <rect x="20" y="20" width="20" height="20" rx="4" stroke="url(#paint1_linear)" stroke-width="3"/>
+                <path d="M18 30L30 18" stroke="url(#paint2_linear)" stroke-width="3" stroke-linecap="round"/>
+                <defs>
+                    <linearGradient id="paint0_linear" x1="8" y1="8" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#8B5CF6"/>
+                        <stop offset="1" stop-color="#06B6D4"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear" x1="20" y1="20" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#06B6D4"/>
+                        <stop offset="1" stop-color="#8B5CF6"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear" x1="18" y1="18" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#8B5CF6"/>
+                        <stop offset="1" stop-color="#06B6D4"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>Image Converter</span>
+        </div>
+        <div class="nav-badges">
+            <span class="badge">v1.0 - Local & Secure</span>
+        </div>
+    </nav>
+
+    <!-- MAIN APP HUB -->
+    <main>
+        <div class="hero">
+            <h1>Convert Images Instantly.<br>Zero Server Uploads.</h1>
+            <p>A professional-grade tool to transform your assets between JPG and PNG formats locally in your browser—safely and securely.</p>
+        </div>
+
+        <div class="converter-container">
+            <!-- Processing State -->
+            <div class="processing-overlay" id="processingOverlay">
+                <div class="spinner"></div>
+                <p>Processing image...</p>
+            </div>
+
+            <!-- Dropzone -->
+            <div class="dropzone" id="dropzone">
+                <svg class="dropzone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <h3>Drag & drop your image here</h3>
+                <p>or click to browse from your device</p>
+                <input type="file" id="fileInput" accept="image/png, image/jpeg, image/jpg">
+            </div>
+
+            <!-- Workspace Panel -->
+            <div class="workspace" id="workspace">
+                <div class="preview-section">
+                    <div class="image-preview-container">
+                        <img id="imagePreview" src="" alt="Preview">
+                    </div>
+                    <div class="file-metadata">
+                        <span id="filenameDisplay">image.png</span>
+                        <span id="formatDisplay">PNG</span>
+                        <span id="sizeDisplay">1.2 MB</span>
+                    </div>
+                </div>
+
+                <div class="format-toggle-container">
+                    <div class="format-toggle">
+                        <button class="toggle-btn active" id="btnToPng">To PNG</button>
+                        <button class="toggle-btn" id="btnToJpg">To JPG</button>
+                    </div>
+                </div>
+
+                <div class="action-dashboard">
+                    <button class="btn-primary" id="btnConvert">
+                        <span>Convert Image</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </button>
+                    <a href="#" class="btn-download" id="btnDownload">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        <span>Download Converted Image</span>
+                    </a>
+                    <button class="reset-btn" id="btnReset">Convert another file</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCORDION / CAPABILITIES SECTION -->
+        <div class="features-section">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <h4>100% Secure & Private</h4>
+                <p>Your files never leave your device. All processing happens entirely within your browser for absolute privacy and data safety.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h4>Lossless Optimization</h4>
+                <p>We utilize the browser's Canvas API to orchestrate clean format translation, including solid background rendering when converting transparency to JPG.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <h4>Lightning Fast Execution</h4>
+                <p>By leveraging your local device's computational power instead of relying on server round-trips, conversions happen instantly.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- PROFESSIONAL FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                &copy; 2026 Image Converter. All rights reserved.
+            </div>
+            <div class="footer-center">
+                <span class="credit-signature">Created by Ashna Amir</span>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
+
